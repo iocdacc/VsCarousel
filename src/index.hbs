@@ -6,9 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="{{htmlWebpackPlugin.files.chunks.index.css}}">
+    <style>
+      .vsCarousel .vsCarousel_item
+      {
+        height: 500px;
+        font-size: 136px;
+      }
+      .vsCarousel .vsCarousel_button .vsCarousel_button-prev,
+      .vsCarousel .vsCarousel_button .vsCarousel_button-next
+      {
+        font-size: 136px;
+      }
+    </style>
   </head>
   <body>
+    <div class="vsCarousel">
+      <div class="vsCarousel_item"><div class="item_1"><img src="/public/pic/4.jpg" alt=""></div></div>
+      <div class="vsCarousel_item"><div class="item_1"><img src="/public/pic/1.jpg" alt=""></div></div>
+      <div class="vsCarousel_item"><div class="item_1"><img src="/public/pic/2.jpg" alt=""></div></div>
+      <div class="vsCarousel_item"><div class="item_1"><img src="/public/pic/3.jpg" alt=""></div></div>
 
+      <div class="vsCarousel_button">
+        <button class="vsCarousel_button-prev"></button>
+        <button class="vsCarousel_button-next"></button>
+      </div>
+
+      <div class="vsCarousel_page">
+        <button class="vsCarousel_page-button" index="1">1</button>
+        <button class="vsCarousel_page-button" index="2">2</button>
+        <button class="vsCarousel_page-button" index="3">3</button>
+      </div>
+    </div>
     <script src="{{htmlWebpackPlugin.files.chunks.index.entry}}" type="text/javascript"></script>
+    <script>
+      let carousel = new vsCarousel
+
+    </script>
   </body>
 </html>

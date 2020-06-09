@@ -5,17 +5,18 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const merge = require('webpack-merge');
 const template = require('./webpack.config.template.js');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(template, {
   mode: 'production',
+  // devtool: "source-map",
   entry: {
     index: './src/js/index.js',
   },
   output: {
-    filename: 'js/[name].[hash].js',
+    filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist'),
-    // library: 'index',
-    // libraryTarget: 'umd'
+    libraryTarget: 'umd'
   },
   externals: {
 
@@ -29,8 +30,16 @@ module.exports = merge(template, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash].css',
+      filename: 'css/[name].css',
     }),
+    new copyWebpackPlugin({
+      patterns: [
+        {
+          from: `${__dirname}/src/public`,
+          to: './public'
+        },
+      ],
+    })
   ],
   module: {
     rules: [

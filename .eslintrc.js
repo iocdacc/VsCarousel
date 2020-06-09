@@ -2,6 +2,10 @@ module.exports = {
   extends: [
 
   ],
+  parserOptions: {
+    "ecmaVersion": 6,
+  },
+  plugins: ["a-plugin"],
   env: {
       // Your environments (which contains several predefined global variables)
       //

@@ -3,3 +3,77 @@ $body-color: #fff;
 body {
   background-color: $body-color;
 }
+
+.vsCarousel{
+  position: relative;
+  overflow: hidden;
+
+  .vsCarousel_itembox::after{
+    content:"";
+    display:table;
+    clear:both;
+  }
+
+  .vsCarousel_itembox{
+    position: relative;
+  }
+  
+  .vsCarousel_item{
+    float: left;
+    position: relative;
+    overflow: hidden;
+    .item_1 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+        >img{
+          max-width: none;
+          position: relative;
+          left: -50%;
+        }
+    }
+  }
+
+  .vsCarousel_button-prev{
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    background: url('../img/prev.png') no-repeat center;
+    background-size:50px 50px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+  }
+
+  .vsCarousel_button-next{
+    position: absolute;
+    top: 45%;
+    right: 10%;
+    background: url('../img/next.png') no-repeat center;
+    background-size:50px 50px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 0;
+  }
+
+  .vsCarousel_page{
+    margin: 0 auto;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+
+    .vsCarousel_page-button{
+      float: left;
+      border: 2px solid #fff;
+      background-color: #1296db;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      margin: 0 3px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
