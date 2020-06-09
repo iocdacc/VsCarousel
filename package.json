@@ -1,12 +1,12 @@
 {
-  "name": "vsCarousel",
+  "name": "vscarousel",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:iocdacc/old-js.git",
   "author": "iocdacc <iocdacc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "watch": "webpack --watch",
+    "watch": "webpack --wcatch",
     "start": "webpack-dev-server --open",
     "build": "webpack"
   },
