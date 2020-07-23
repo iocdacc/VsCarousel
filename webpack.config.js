@@ -8,13 +8,13 @@ const template = require('./webpack.config.template.js');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(template, {
-  mode: 'production',
+  mode: 'development',
   // devtool: "source-map",
   entry: {
-    index: './src/js/index.js',
+    vsCarousel: './src/vsCarousel.js',
   },
   output: {
-    filename: 'js/[name].js',
+    filename: 'js/[name].min.js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd'
   },
@@ -31,18 +31,14 @@ module.exports = merge(template, {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
-    }),
-    new copyWebpackPlugin({
-      patterns: [
-        {
-          from: `${__dirname}/src/public`,
-          to: './public'
-        },
-      ],
     })
   ],
   module: {
     rules: [
+      {
+        test: /\.hbs$/,
+        use: ['handlebars-loader']
+      },
       {
         test: /\.css|s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
@@ -53,6 +49,7 @@ module.exports = merge(template, {
           {
             loader: 'url-loader',
             options: {
+              esModule: false,
               limit: 10000, // 10kb
             },
           },
