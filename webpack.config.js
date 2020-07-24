@@ -9,6 +9,7 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(template, {
   mode: 'development',
+  //mode: 'production',
   // devtool: "source-map",
   entry: {
     vsCarousel: './src/vsCarousel.js',
