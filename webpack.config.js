@@ -16,7 +16,9 @@ module.exports = merge(template, {
   output: {
     filename: 'js/[name].min.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd'
+    library: 'VsCarousel',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
   },
   externals: {
 

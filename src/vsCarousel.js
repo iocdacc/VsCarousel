@@ -8,7 +8,7 @@ import autoPlay from './components/autoPlay'
 
 let init = [slide, effect, button, event, autoPlay]
 
-export function VsCarousel(...arg){
+export default function VsCarousel(...arg){
   this.config = {}
   if (arg.length === 1) {
     typeof(arg[0]) === 'string' && (this.config.name = arg[0])
