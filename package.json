@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "vsbar": "^1.0.13"
+    "vsbar": "^1.0.19"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

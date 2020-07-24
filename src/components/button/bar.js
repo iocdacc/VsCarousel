@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import { VsBar } from 'vsbar/src/index'
+import VsBar from 'vsbar'
 
 let init = [
   function (){
@@ -10,12 +10,11 @@ let init = [
 
     let bar = ()=>{
       $(element).find(className.page).each(function (){
-        let canvas = document.createElement('canvas')
-        canvas.className = 'vsBar'
-        this.appendChild(canvas)
-        this.pageBar = new VsBar({
+        let vsBar = document.createElement('div')
+        vsBar.className = 'vsBar'
+        this.appendChild(vsBar)
+        this.pageBar = new VsBar(vsBar, {
           cvslineWidth: 4,
-          cvsDom: canvas,
           millisecond: config.time * 1000,
           color: '#fff'
         })
@@ -29,7 +28,7 @@ let init = [
         this.pageBar.ctx.clearRect(0, 0, this.pageBar.config.cvsDom.clientWidth, this.pageBar.config.cvsDom.clientHeight);
       })
       
-      $(element).find(className.page + `[data-index=${index}]`)[0] && $(element).find(className.page + `[data-index=${index}]`)[0].pageBar.reset({
+      $(element).find(className.page + `[data-index=${index}]`)[0] && $(element).find(className.page + `[data-index=${index}]`)[0].pageBar.action.reset({
         barBeforeEnd: 0
       })
     }

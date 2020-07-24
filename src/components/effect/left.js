@@ -1,20 +1,14 @@
 import $ from 'jquery'
 
 let init = [
-  function (){
+  function () {
     const vsCarousel = this
     const { element, className, config } = vsCarousel
 
-    if(config.effect !== 'slide') return
+    if (config.effect !== 'slide') return
 
-    vsCarousel.effect.left = ()=>{
-      if (vsCarousel.slide.leftEnd()){
-        vsCarousel.slide.left = -element.offsetWidth
-        $(element).find(className.wrapper).css({
-          left: vsCarousel.slide.left,
-          transition: 'all 0s'
-        })
-      }
+    vsCarousel.effect.left = () => {
+      vsCarousel.effect.leftEnd()
       vsCarousel.slide.slideNumAdd()
       vsCarousel.button.pageHover(vsCarousel.slide.pageNum())
       vsCarousel.slide.left = vsCarousel.slide.left - element.offsetWidth
@@ -23,16 +17,30 @@ let init = [
         left: vsCarousel.slide.left,
         transition: 'all .5s'
       })
+
+      $(element).find(className.wrapper).on('transitionend', function (){
+        vsCarousel.effect.leftEnd()
+      })
+    }
+
+    vsCarousel.effect.leftEnd = ()=>{
+      if (vsCarousel.slide.leftEnd()) {
+        vsCarousel.slide.left = -element.offsetWidth
+        $(element).find(className.wrapper).css({
+          left: vsCarousel.slide.left,
+          transition: 'all 0s'
+        })
+      }
     }
 
   },
-  function (){
+  function () {
     const vsCarousel = this
     const { element, className, config } = vsCarousel
 
-    if(config.effect !== 'fade') return
+    if (config.effect !== 'fade') return
 
-    vsCarousel.effect.left = ()=>{
+    vsCarousel.effect.left = () => {
       vsCarousel.slide.leftEnd()
       vsCarousel.slide.slideNumAdd()
       vsCarousel.button.pageHover(vsCarousel.slide.pageNum())
@@ -50,6 +58,6 @@ let init = [
   },
 ]
 
-export default function (){
-  init.forEach(v=>{v.call(this)})
+export default function () {
+  init.forEach(v => { v.call(this) })
 }

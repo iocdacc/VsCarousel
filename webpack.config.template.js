@@ -8,7 +8,7 @@ let templateArr = [
 
 templateArr.forEach(v => {
   plugins.push(new HtmlWebpackPlugin(Object.assign(v, {
-    inject: 'head',
+    //inject: 'head',
     minify:{
       removeComments: true, // 移除HTML中的注释
       collapseWhitespace: true, // 删除空白符与换行符

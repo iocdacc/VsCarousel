@@ -8,13 +8,7 @@ let init = [
     if(config.effect !== 'slide') return
 
     vsCarousel.effect.right = ()=>{
-      if (vsCarousel.slide.rightEnd()){
-        vsCarousel.slide.left = -element.offsetWidth * ($(element).find(className.slide).length - 2)
-        $(element).find(className.wrapper).css({
-          left: vsCarousel.slide.left,
-          transition: 'all 0s'
-        })
-      }
+      vsCarousel.effect.rightEnd()
       vsCarousel.slide.slideNumSub()
       vsCarousel.button.pageHover(vsCarousel.slide.pageNum())
       vsCarousel.slide.left = vsCarousel.slide.left + element.offsetWidth
@@ -23,6 +17,20 @@ let init = [
         left: vsCarousel.slide.left,
         transition: 'all .5s'
       })
+
+      $(element).find(className.wrapper).on('transitionend', function (){
+        vsCarousel.effect.rightEnd()
+      })
+    }
+
+    vsCarousel.effect.rightEnd = ()=>{
+      if (vsCarousel.slide.rightEnd()){
+        vsCarousel.slide.left = -element.offsetWidth * ($(element).find(className.slide).length - 2)
+        $(element).find(className.wrapper).css({
+          left: vsCarousel.slide.left,
+          transition: 'all 0s'
+        })
+      }
     }
 
   },

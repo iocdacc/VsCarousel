@@ -7869,10 +7869,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vsbar@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/vsbar/-/vsbar-1.0.13.tgz#540dea1a1e2e81e794f4d17174588b08ddd33cb7"
-  integrity sha512-Z7dO6GXYV0x4qeV+eP28NCaCRaOc2YqtuK1v3bFP/ZsyT3foy8M+ifKH7f9tgu2HSkAksoBXPqcpMaGMFc/uKQ==
+vsbar@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/vsbar/-/vsbar-1.0.19.tgz#5dbc4ddf925ee5761a8f43f9fae9c391d53e50d5"
+  integrity sha512-mtXARVe87Xgrb5gMhGXNLNhfuvdzZZ0tebahmsaVUJKDq90tuklZBqLeH7xYXpbLAe+mkvdz8xW4T1L3mN3Xxw==
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"

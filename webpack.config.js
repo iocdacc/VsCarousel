@@ -15,7 +15,7 @@ module.exports = merge(template, {
     vsCarousel: './src/vsCarousel.js',
   },
   output: {
-    filename: 'js/[name].min.js',
+    filename: '[name].min.js',
     path: path.resolve(__dirname, 'dist'),
     library: 'VsCarousel',
     libraryTarget: 'umd',
@@ -33,7 +33,7 @@ module.exports = merge(template, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: '[name].css',
     })
   ],
   module: {

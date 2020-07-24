@@ -11,10 +11,10 @@ let init = [slide, effect, button, event, autoPlay]
 export default function VsCarousel(...arg){
   this.config = {}
   if (arg.length === 1) {
-    typeof(arg[0]) === 'string' && (this.config.name = arg[0])
+    this.config.name = arg[0]
   }else if (arg.length === 2) {
-    typeof(arg[1]) === 'object' && (this.config = arg[1])
-    typeof(arg[0]) === 'string' && (this.config.name = arg[0])
+    this.config = arg[1]
+    this.config.name = arg[0]
   }
 
   if (!config.call(this)) return
@@ -23,3 +23,5 @@ export default function VsCarousel(...arg){
 }
 
 console.log('vsCarousel by https://blog.iocdacc.com')
+
+let carousel = new VsCarousel()

@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import { VsBar } from 'vsbar/src/index'
 
 let init = [
   function (){
