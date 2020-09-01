@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let plugins = []
 
 let templateArr = [
-  {template: 'src/vsCarousel.hbs', chunks: ['vsCarousel']}
+  {template: 'src/vsCarousel.hbs', chunks: ['vscarousel']}
 ]
 
 templateArr.forEach(v => {

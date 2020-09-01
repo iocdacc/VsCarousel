@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import left from './left'
 import right from './right'
 import page from './page'

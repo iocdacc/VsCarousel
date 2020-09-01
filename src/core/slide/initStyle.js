@@ -4,6 +4,10 @@ let init = [
   function (){
     const vsCarousel = this
     const { element, className, config } = vsCarousel
+  },
+  function (){
+    const vsCarousel = this
+    const { element, className, config } = vsCarousel
 
     if(config.effect !== 'slide') return
 
@@ -50,7 +54,7 @@ let init = [
         opacity: 0,
         transition: 'all 0s'
       })
-      $(element).find(className.slide).eq(0).css({
+      $(element).find(className.slide).eq(vsCarousel.slide.pageNum() - 1).css({
         opacity: 1
       })
       $(element).find(className.box).css({
@@ -64,6 +68,20 @@ let init = [
     vsCarousel.slide.initStyle()
 
   },
+  function (){
+    const vsCarousel = this
+    const { element, className, config } = vsCarousel
+
+
+    if(config.pege === 'right'){
+      $(element).find(className.pagebox).css({textAlign: 'right'})
+    }else if (config.pege === 'left') {
+      $(element).find(className.pagebox).css({textAlign: 'left'})
+    }else{
+      $(element).find(className.pagebox).css({textAlign: 'center'})
+    }
+
+  }
 ]
 
 export default function (){

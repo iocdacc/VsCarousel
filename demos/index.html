@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VsCarousel</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="../dist/vsCarousel.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/themes/prism.css">
+</head>
+
+<body>
+  <div class="g-nav g-top">
+    <div class="m-menu">
+      <a href="https://blog.iocdacc.com" target="_blank">Blog</a>
+      <span>|</span>
+      <a href="https://github.com/iocdacc" target="_blank">Github</a>
+    </div>
+  </div>
+  <div class="g-nav g-top-2">
+    <div class="m-title">
+      <h1>VsCarousel</h1>
+    </div>
+  </div>
+  <div class="g-nav g-top-2">
+    <div class="m-explain">
+      <p>美观的轮播图插件</p>
+      <p>slide</p>
+    </div>
+  </div>
+  <div class="g-nav g-top-2">
+    <div class="m-content">
+      <div id="vsCarousel" class="vsCarousel m-show">
+        <ul class="vsCarousel-wrapper">
+          <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=7" alt="1"></li>
+          <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=8" alt="2"></li>
+          <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=9" alt="3"></li>
+        </ul>
+        
+        <div class="vsCarousel-page">
+          <button class="vsCarousel-page-play"></button>
+          <button class="vsCarousel-page-button" data-index="1"></button>
+          <button class="vsCarousel-page-button" data-index="2"></button>
+          <button class="vsCarousel-page-button" data-index="3"></button>
+        </div>
+      </div>
+      <pre class="m-code"><code id="code" class="language-html"></code></pre>
+    </div>
+  </div>
+  <div class="g-top-2">
+    <div class="m-content">
+      <div id="vsCarousel2" class="vsCarousel m-show2">
+        <ul class="vsCarousel-wrapper">
+          <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=7" alt="1"></li>
+          <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=8" alt="2"></li>
+          <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=9" alt="3"></li>
+        </ul>
+
+        <div class="vsCarousel-button">
+          <button class="vsCarousel-button-prev"></button>
+          <button class="vsCarousel-button-next"></button>
+        </div>
+        
+        <div class="vsCarousel-page">
+          <button class="vsCarousel-page-play"></button>
+          <button class="vsCarousel-page-button" data-index="1"></button>
+          <button class="vsCarousel-page-button" data-index="2"></button>
+          <button class="vsCarousel-page-button" data-index="3"></button>
+        </div>
+      </div>
+      <pre class="m-code"><code id="code2" class="language-html"></code></pre>
+    </div>
+  </div>
+
+    <div class="m-content g-top-2 g-nav clear">
+      <h2>简介</h2>
+      <p>1. 请设置轮播图容器的高度。</p>
+      <p>2. 如果未设置宽度时，轮播图会根据外部容器自适应宽度。</p>
+      <p>3. 测试环境 Chrome 版本 84.0.4147.135（正式版本） （64 位）</p>
+    </div>
+
+    <div class="m-content g-top-2 g-nav g-foot clear">
+      <h2>默认配置</h2>
+      <pre><code id="code3" class="language-javascript"></code></pre>
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/prism.min.js"></script>
+  <script src="../dist/vscarousel.min.js"></script>
+  <script>
+    let vsCarousel = new VsCarousel('vsCarousel', {
+      effect: 'fade',
+      pege: 'center'
+    });
+    let vsCarousel2 = new VsCarousel('vsCarousel2');
+
+    document.getElementById('code').textContent = 
+`<!-- 请设置轮播图容器的高度 -->
+<div id="vsCarousel" class="vsCarousel">
+  <!-- 轮播图元素列表 -->
+  <ul class="vsCarousel-wrapper">
+    <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=7" alt="1"></li>
+    <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=8" alt="2"></li>
+    <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=9" alt="3"></li>
+  </ul>
+  <!-- 分页器 -->
+  <div class="vsCarousel-page">
+    <button class="vsCarousel-page-play"></button>
+    <button class="vsCarousel-page-button" data-index="1"></button>
+    <button class="vsCarousel-page-button" data-index="2"></button>
+    <button class="vsCarousel-page-button" data-index="3"></button>
+  </div>
+</div>
+\u003cscript>
+  let vsCarousel = new VsCarousel('vsCarousel', {
+    effect: 'fade',
+    pege: 'center'
+  });
+\u003c/script>`
+
+    document.getElementById('code2').textContent = 
+`<!-- 请设置轮播图容器的高度 -->
+<div id="vsCarousel2" class="vsCarousel">
+  <!-- 轮播图元素列表 -->
+  <ul class="vsCarousel-wrapper">
+    <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=7" alt="1"></li>
+    <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=8" alt="2"></li>
+    <li class="vsCarousel-slide"><img src="https://unsplash.it/1920/500/?image=9" alt="3"></li>
+  </ul>
+  <!-- 前进后退按钮 -->
+  <div class="vsCarousel-button">
+    <button class="vsCarousel-button-prev"></button>
+    <button class="vsCarousel-button-next"></button>
+  </div>
+  <!-- 分页器 -->
+  <div class="vsCarousel-page">
+    <button class="vsCarousel-page-play"></button>
+    <button class="vsCarousel-page-button" data-index="1"></button>
+    <button class="vsCarousel-page-button" data-index="2"></button>
+    <button class="vsCarousel-page-button" data-index="3"></button>
+  </div>
+</div>
+\u003cscript>
+  let vsCarousel = new VsCarousel('vsCarousel2');
+\u003c/script>`
+
+    document.getElementById('code3').textContent = 
+`let vsCarousel = new VsCarousel('vsCarousel', { // 生效dom的id。
+  effect: 'slide|fade', // 切换效果，滑动或渐变。
+  bar: true, // 是否显示分页器上的进度条。
+  pege: 'right|left|center', // 分页器位置。
+  autoPlay: true // 是否自动切换。
+  time: 5, // 自动切换停留时间。
+});`
+
+  </script>
+</body>
+
+</html>

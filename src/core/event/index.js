@@ -11,6 +11,7 @@ export default function (){
     $(element).find(className.play).on('click', function (){vsCarousel.event.play(this)})
     $(window).on('resize', vsCarousel.event.resize)
     $(element).on('mouseenter', vsCarousel.event.mouseenter)
+    $(element).find(className.box).find('img').on('load', function (){vsCarousel.event.imgShow(this)})
   }
   
   vsCarousel.event.next = ()=>{
@@ -39,6 +40,11 @@ export default function (){
   }
   vsCarousel.event.mouseenter = ()=>{
     //vsCarousel.autoPlay.stop()
+  }
+  vsCarousel.event.imgShow = (e)=>{
+    $(e).css({
+      opacity: 1
+    })
   }
 
   vsCarousel.event.init()

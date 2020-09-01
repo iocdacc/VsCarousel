@@ -8,11 +8,11 @@ const template = require('./webpack.config.template.js');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(template, {
-  mode: 'development',
-  //mode: 'production',
+  // mode: 'development',
+  mode: 'production',
   // devtool: "source-map",
   entry: {
-    vsCarousel: './src/vsCarousel.js',
+    vscarousel: './src/vsCarousel.js',
   },
   output: {
     filename: '[name].min.js',
@@ -33,7 +33,7 @@ module.exports = merge(template, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].min.css',
     })
   ],
   module: {

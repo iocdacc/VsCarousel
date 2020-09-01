@@ -1,11 +1,14 @@
-import $ from 'jquery'
 
 let init = [
   function (){
     const vsCarousel = this
     const { element, className, config } = vsCarousel
+
     vsCarousel.autoPlay = {}
     vsCarousel.autoPlay.pauseValve = false
+
+    vsCarousel.button.playPause()
+    vsCarousel.button.pageHover(vsCarousel.slide.pageNum())
 
     vsCarousel.autoPlay.play = ()=>{
       vsCarousel.button.playStart()
@@ -41,7 +44,7 @@ let init = [
       clearInterval(vsCarousel.autoPlay.intervalId)
     }
 
-    vsCarousel.autoPlay.play()
+    config.autoPlay && vsCarousel.autoPlay.play()
 
   },
 ]

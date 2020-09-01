@@ -3,9 +3,12 @@ export default function (){
 
   let defaultConfig = {
     name: 'vsCarousel',
+    rootName: 'vsCarousel',
     effect: ['slide', 'fade'],
     time: 5,
-    bar: true
+    bar: true,
+    pege: 'right',
+    autoPlay: true
   }
 
   VsCarousel.config.effect = defaultConfig.effect.indexOf(VsCarousel.config.effect) !== -1 ? VsCarousel.config.effect : defaultConfig.effect[0]
@@ -14,8 +17,8 @@ export default function (){
   Object.assign(defaultConfig, VsCarousel.config)
   VsCarousel.config = defaultConfig
 
-  if (document.getElementsByClassName(VsCarousel.config.name).length === 0) return
-  VsCarousel.element = document.getElementsByClassName(VsCarousel.config.name)[0]
+  if (!document.getElementById(VsCarousel.config.name)) return
+  VsCarousel.element = document.getElementById(VsCarousel.config.name)
 
   return true
 }

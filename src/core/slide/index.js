@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import initDom from './initDom'
 import initStyle from './initStyle'
 import slideNum from './slideNum'
